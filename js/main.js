@@ -1,146 +1,150 @@
-// Main functionality for UrbanRise Galle
+// Minimal JavaScript for UrbanRise Galle - All functionality in one file
 
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
     
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('show');
         });
     }
 
-    // Galle-themed animation for cards
-    const cards = document.querySelectorAll('.feature-card, .event-card, .issue-card, .forum-post');
+    // Simple traffic display
+    const heatmapElement = document.getElementById('traffic-heatmap');
+    const cityButtons = document.querySelectorAll('.city-btn');
     
-    function animateCards() {
-        cards.forEach((card, index) => {
-            const cardPosition = card.getBoundingClientRect().top;
-            const screenHeight = window.innerHeight;
+    if (heatmapElement) {
+        function showTraffic(city) {
+            heatmapElement.innerHTML = `
+                <div style="padding: 20px; text-align: center;">
+                    <h4>${city.charAt(0).toUpperCase() + city.slice(1)} Traffic</h4>
+                    <div style="margin: 10px 0; padding: 10px; background: green; color: white;">Low Traffic</div>
+                    <div style="margin: 10px 0; padding: 10px; background: orange; color: white;">Medium Traffic</div>
+                    <div style="margin: 10px 0; padding: 10px; background: red; color: white;">High Traffic</div>
+                </div>
+            `;
+        }
+        
+        cityButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                cityButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                showTraffic(this.dataset.city);
+            });
+        });
+        
+        showTraffic('galle');
+    }
+
+    // Event filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const eventCards = document.querySelectorAll('.event-card');
+    
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
             
-            if (cardPosition < screenHeight * 0.8) {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+            const filter = this.dataset.filter;
+            eventCards.forEach(card => {
+                card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+            });
+        });
+    });
+
+    // Calculator
+    const calculateBtn = document.getElementById('calculate-btn');
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', function() {
+            const distance = document.getElementById('distance').value || 10;
+            const transport = document.getElementById('transport-type').value;
+            
+            const emissions = { car: 20, bus: 10, train: 5, motorcycle: 15, bicycle: 0, walking: 0 };
+            const costs = { car: 500, bus: 100, train: 50, motorcycle: 200, bicycle: 0, walking: 0 };
+            
+            document.getElementById('carbon-result').textContent = emissions[transport] + ' kg CO2';
+            document.getElementById('cost-result').textContent = 'Rs. ' + costs[transport];
+            document.getElementById('time-result').textContent = (distance * 2) + ' hours';
+            
+            const tips = ['Use public transport', 'Try cycling', 'Walk for short trips'];
+            document.getElementById('alternatives-list').innerHTML = 
+                tips.map(tip => `<li>${tip}</li>`).join('');
+        });
+    }
+
+    // Solution tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            alert('Showing ' + this.textContent + ' solutions');
+        });
+    });
+
+    // Registration buttons
+    const registerButtons = document.querySelectorAll('.register-btn');
+    registerButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Thank you for your interest! This is a demo.');
+        });
+    });
+
+    // Event details modal
+    const detailButtons = document.querySelectorAll('.details-btn');
+    const modal = document.getElementById('event-details-modal');
+    
+    if (modal) {
+        detailButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const eventCard = this.closest('.event-card');
+                const title = eventCard.querySelector('h3').textContent;
                 
-                // Add Galle-specific heritage effect
-                if (card.classList.contains('feature-card')) {
-                    setTimeout(() => {
-                        card.style.boxShadow = '0 8px 25px rgba(141, 110, 99, 0.15)'; // Heritage color shadow
-                    }, index * 100);
-                }
-            }
-        });
-    }
-    
-    // Set initial state with heritage-inspired transitions
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease';
-    });
-    
-    // Animate on scroll
-    window.addEventListener('scroll', animateCards);
-    animateCards(); // Initial check
-
-    // Add Galle Fort inspired navigation highlighting
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = 'rgba(141, 110, 99, 0.1)'; // Heritage color
+                modal.querySelector('.modal-body').innerHTML = `
+                    <h2>${title}</h2>
+                    <p><strong>Location:</strong> Galle</p>
+                    <p>This is a community event. Join us!</p>
+                    <button onclick="alert('Registration coming soon!')">Register</button>
+                `;
+                modal.style.display = 'flex';
+            });
         });
         
-        link.addEventListener('mouseleave', function() {
-            if (!this.closest('li').classList.contains('active')) {
-                this.style.backgroundColor = '';
-            }
-        });
-    });
-
-    // Add heritage-themed loading animation for images
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-            this.style.filter = 'none';
+        modal.querySelector('.close-modal').addEventListener('click', () => {
+            modal.style.display = 'none';
         });
         
-        // Set initial state
-        img.style.opacity = '0';
-        img.style.filter = 'blur(5px)';
-        img.style.transition = 'opacity 0.6s ease, filter 0.6s ease';
-    });
-
-    // Galle-specific scroll effects for hero section
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            hero.style.transform = `translateY(${rate}px)`;
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
         });
     }
 
-    // Add coastal breeze effect to certain elements
-    const floatingElements = document.querySelectorAll('.feature-card i, .pillar-icon');
-    floatingElements.forEach((element, index) => {
-        // Subtle floating animation inspired by ocean breeze
-        element.style.animation = `galleBreeze ${3 + (index % 2)}s ease-in-out infinite`;
-    });
-
-    // Add CSS for Galle-specific animations
-    const galleStyles = document.createElement('style');
-    galleStyles.textContent = `
-        @keyframes galleBreeze {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(2deg); }
-        }
+    // Simple forum
+    const forumContainer = document.getElementById('feedback-app');
+    if (forumContainer) {
+        const posts = [
+            { name: 'John', title: 'Traffic in Galle Fort', content: 'Too many cars in the narrow streets.' },
+            { name: 'Mary', title: 'Beach cleanup needed', content: 'We need more cleanup events.' }
+        ];
         
-        .heritage-glow {
-            box-shadow: 0 0 20px rgba(141, 110, 99, 0.3);
-        }
+        let html = '<div style="max-width: 800px; margin: 0 auto; padding: 20px;">';
+        html += '<h3>Community Posts</h3>';
         
-        .coastal-shimmer {
-            background: linear-gradient(45deg, 
-                rgba(2, 119, 189, 0.1), 
-                rgba(255, 248, 225, 0.1),
-                rgba(2, 119, 189, 0.1));
-            background-size: 200% 200%;
-            animation: coastalShimmer 4s ease-in-out infinite;
-        }
-        
-        @keyframes coastalShimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-    `;
-    document.head.appendChild(galleStyles);
-
-    // Add special effects for heritage elements
-    const heritageElements = document.querySelectorAll('.feature-card, .about-image, .forum-post');
-    heritageElements.forEach(element => {
-        element.addEventListener('mouseenter', function() {
-            this.classList.add('heritage-glow');
+        posts.forEach(post => {
+            html += `
+                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                    <h4>${post.title}</h4>
+                    <p><strong>By:</strong> ${post.name}</p>
+                    <p>${post.content}</p>
+                    <button onclick="alert('Liked!')">Like</button>
+                </div>
+            `;
         });
         
-        element.addEventListener('mouseleave', function() {
-            this.classList.remove('heritage-glow');
-        });
-    });
-
-    // Simulate gentle coastal environment sounds (visual feedback)
-    let isCoastalMode = false;
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'c' && e.ctrlKey) { // Ctrl+C for coastal mode
-            isCoastalMode = !isCoastalMode;
-            document.body.classList.toggle('coastal-shimmer', isCoastalMode);
-            
-            if (isCoastalMode) {
-                console.log('🌊 Galle coastal ambiance mode activated');
-            } else {
-                console.log('🏛️ Heritage mode activated');
-            }
-        }
-    });
+        html += '</div>';
+        forumContainer.innerHTML = html;
+    }
 });

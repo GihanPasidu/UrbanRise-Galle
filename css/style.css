@@ -29,7 +29,6 @@
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-large: 0 10px 25px rgba(0, 0, 0, 0.08), 0 5px 10px rgba(0, 0, 0, 0.05);
     --heritage-shadow: 0 4px 8px rgba(141, 110, 99, 0.15);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --font-heading: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --border-radius: 8px;
@@ -126,7 +125,6 @@ img {
     border-radius: var(--border-radius-small);
     font-weight: 500;
     cursor: pointer;
-    transition: var(--transition);
     text-align: center;
     letter-spacing: 0.02em;
     box-shadow: 0 4px 8px rgba(2, 119, 189, 0.3);
@@ -134,24 +132,8 @@ img {
     overflow: hidden;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.6s ease;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
 .btn:hover {
     background: linear-gradient(135deg, var(--heritage-color), var(--ocean-color));
-    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(141, 110, 99, 0.4);
 }
 
@@ -167,7 +149,6 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border-bottom: 2px solid var(--heritage-light);
 }
 
@@ -210,25 +191,8 @@ nav ul li a {
     padding: 10px 15px;
     color: var(--text-dark);
     font-weight: 500;
-    transition: var(--transition);
     border-radius: var(--border-radius-small);
     position: relative;
-}
-
-nav ul li.active a {
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-nav ul li.active a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 15px;
-    right: 15px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 3px 3px 0 0;
 }
 
 nav ul li a:hover {
@@ -303,15 +267,18 @@ nav ul li a:hover {
 }
 
 .solutions-banner {
-    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8)), url('../images/galle-harbor.jpg');
+    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8));
+    background-color: var(--heritage-color);
 }
 
 .events-banner {
-    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8)), url('../images/lighthouse-street.jpg');
+    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8));
+    background-color: var(--ocean-color);
 }
 
 .feedback-banner {
-    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8)), url('../images/community-gathering-galle.jpg');
+    background-image: linear-gradient(rgba(141, 110, 99, 0.8), rgba(2, 119, 189, 0.8));
+    background-color: var(--primary-color);
 }
 
 .banner-content h2 {
@@ -350,7 +317,6 @@ nav ul li a:hover {
     border-radius: var(--border-radius);
     box-shadow: var(--heritage-shadow);
     text-align: center;
-    transition: var(--transition);
     border: 1px solid var(--heritage-light);
     position: relative;
     overflow: hidden;
@@ -360,19 +326,7 @@ nav ul li a:hover {
     justify-content: space-between;
 }
 
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--ocean-color), var(--heritage-color));
-    z-index: 1;
-}
-
 .feature-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
     border-color: var(--heritage-color);
 }
@@ -381,11 +335,9 @@ nav ul li a:hover {
     font-size: 3rem;
     color: var(--heritage-color);
     margin-bottom: 25px;
-    transition: var(--transition);
 }
 
 .feature-card:hover i {
-    transform: scale(1.1);
     color: var(--ocean-color);
 }
 
@@ -637,11 +589,9 @@ footer {
     border-radius: 10px;
     box-shadow: var(--shadow);
     text-align: center;
-    transition: var(--transition);
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -817,11 +767,9 @@ footer {
     background-color: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    transition: var(--transition);
 }
 
 .pillar:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -834,13 +782,11 @@ footer {
     justify-content: center;
     align-items: center;
     margin: 0 auto 20px;
-    transition: var(--transition);
     border: 3px solid var(--heritage-color);
 }
 
 .pillar:hover .pillar-icon {
     background: linear-gradient(135deg, var(--ocean-color), var(--heritage-color));
-    transform: rotate(360deg);
     border-color: var(--ocean-color);
 }
 
@@ -884,35 +830,18 @@ footer {
     border-radius: var(--border-radius-small);
     cursor: pointer;
     font-weight: 500;
-    transition: var(--transition);
     position: relative;
     overflow: hidden;
 }
 
-.tab-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: rgba(25, 118, 210, 0.1);
-    transition: width 0.3s ease;
-    z-index: 0;
-}
-
-.tab-btn:hover::before {
-    width: 100%;
+.tab-btn:hover {
+    background-color: var(--primary-light);
 }
 
 .tab-btn.active {
     background-color: var(--primary-color);
     color: white;
     box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
-}
-
-.tab-btn.active::before {
-    display: none;
 }
 
 /* Calculator Section */
@@ -1043,24 +972,11 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--heritage-shadow);
-    transition: var(--transition);
     position: relative;
     border: 1px solid var(--heritage-light);
 }
 
-.event-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--ocean-color), var(--heritage-color), var(--galle-sunset));
-    z-index: 1;
-}
-
 .event-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(141, 110, 99, 0.15);
     border-color: var(--heritage-color);
 }
@@ -1444,7 +1360,6 @@ footer {
 
 .forum-post:hover {
     border-left-color: var(--ocean-color);
-    transform: translateX(5px);
 }
 
 .post-header {
@@ -1531,16 +1446,11 @@ footer {
     border-radius: 4px;
     background-color: white;
     cursor: pointer;
-    transition: var(--transition);
 }
 
 .like-btn:hover,
 .reply-btn:hover {
     background-color: var(--background-dark);
-}
-
-.like-btn i {
-    color: var(--error-color);
 }
 
 .post-replies {
@@ -1727,92 +1637,4 @@ footer {
     .post-actions button {
         width: 100%;
     }
-}
-
-/* Animations and additional professional styling */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animated {
-    animation-duration: 0.8s;
-    animation-fill-mode: both;
-}
-
-.fadeInUp {
-    animation-name: fadeInUp;
-}
-
-.delay-1 {
-    animation-delay: 0.2s;
-}
-
-.delay-2 {
-    animation-delay: 0.4s;
-}
-
-.delay-3 {
-    animation-delay: 0.6s;
-}
-
-.section-divider {
-    height: 4px;
-    width: 60px;
-    background: var(--primary-color);
-    margin: 0 auto 40px;
-    border-radius: 2px;
-}
-
-/* Professional hover effects */
-.hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-large);
-}
-
-/* Add heritage-specific styling */
-.heritage-highlight {
-    background: linear-gradient(135deg, var(--heritage-light), var(--sand-color));
-    border-left: 4px solid var(--heritage-color);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    margin: 20px 0;
-}
-
-.coastal-accent {
-    background: linear-gradient(135deg, var(--primary-light), rgba(2, 119, 189, 0.1));
-    border-left: 4px solid var(--ocean-color);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    margin: 20px 0;
-}
-
-/* Galle-specific Animations */
-@keyframes galleWave {
-    0%, 100% { transform: translateX(0) rotate(0deg); }
-    25% { transform: translateX(5px) rotate(1deg); }
-    75% { transform: translateX(-5px) rotate(-1deg); }
-}
-
-@keyframes heritageGlow {
-    0%, 100% { box-shadow: 0 0 5px rgba(141, 110, 99, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(141, 110, 99, 0.6); }
-}
-
-.heritage-animate {
-    animation: galleWave 4s ease-in-out infinite;
-}
-
-.heritage-glow-animate {
-    animation: heritageGlow 3s ease-in-out infinite;
 }
