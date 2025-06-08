@@ -579,88 +579,17 @@ nav ul li a:hover {
 footer {
     background-color: var(--text-dark);
     color: white;
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-section h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background-color: var(--primary-color);
-}
-
-.footer-section p, .footer-section li {
-    margin-bottom: 10px;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.footer-section ul {
-    list-style-type: none;
-}
-
-.footer-section ul li a {
-    color: var(--text-light);
-}
-
-.footer-section ul li a:hover {
-    color: var(--primary-color);
-    padding-left: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: var(--transition);
-}
-
-.social-icons a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-5px);
-}
-
-.social-icons i {
-    font-size: 1.2rem;
-    color: white;
+    padding: 30px 0;
 }
 
 .footer-bottom {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.9rem;
     color: var(--text-light);
+    margin: 0;
 }
 
 /* Local Issues Page */
