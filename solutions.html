@@ -26,64 +26,139 @@
         </div>
     </header>
 
-    <section class="page-banner">
+    <section class="page-banner solutions-banner">
         <div class="banner-content">
             <h2>Smart Solutions</h2>
-            <p>Innovative technologies for better urban living</p>
+            <p>Innovative approaches to transform Sri Lankan urban spaces</p>
         </div>
     </section>
 
     <section class="solutions-intro">
         <div class="container">
-            <h2 class="section-title">Our Solutions</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-traffic-light"></i>
-                    <h3>Smart Traffic System</h3>
-                    <p>AI-powered traffic management to reduce congestion in cities.</p>
+            <h2 class="section-title">Our Approach to Smart Cities</h2>
+            <p class="section-description">We've developed practical, technology-driven solutions tailored to Sri Lankan urban areas. These solutions balance innovation with sustainability and are designed to be implemented within our unique social and economic context.</p>
+            
+            <div class="approach-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Using cutting-edge technology adapted to local needs</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-solar-panel"></i>
-                    <h3>Solar Energy</h3>
-                    <p>Clean energy solutions for sustainable urban development.</p>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Ensuring all solutions support environmental wellbeing</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-recycle"></i>
-                    <h3>Waste Management</h3>
-                    <p>Smart waste collection and recycling systems.</p>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Involving citizens in design and implementation</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Green Spaces</h3>
-                    <p>Urban gardens and parks for cleaner air and better living.</p>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Scalability</h3>
+                    <p>Creating solutions that can grow with our cities</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <section class="solutions-showcase">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>UrbanRise Galle</h3>
+                    <h3>SmartSL Urban</h3>
                     <p>Creating better cities for Sri Lanka.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="local-issues.html">Local Issues</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="community-events.html">Community Events</a></li>
-                        <li><a href="feedback.html">Feedback</a></li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Smart Commute Calculator</h2>
+            <p>Calculate your carbon footprint and potential savings from different commuting options.</p>
+            
+            <div class="calculator-tool">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="distance">Daily commute distance (km)</label>
+                        <input type="number" id="distance" min="1" max="100" value="10">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="transport-type">Current transportation method</label>
+                        <select id="transport-type">
+                            <option value="car">Private Car</option>
+                            <option value="bus">Public Bus</option>
+                            <option value="train">Train</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="bicycle">Bicycle</option>
+                            <option value="walking">Walking</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="fuel-type">Fuel type (for vehicles)</label>
+                        <select id="fuel-type">
+                            <option value="petrol">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="na">Not Applicable</option>
+                        </select>
+                    </div>
+                    
+                    <button id="calculate-btn" class="btn">Calculate Impact</button>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: info@smartslurban.lk</p>
-                    <p>Phone: +94 11 123 4567</p>
+                
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <h4>Monthly Carbon Footprint</h4>
+                        <div id="carbon-result" class="result-value">0 kg CO2</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4>Monthly Fuel Cost</h4>
+                        <div id="cost-result" class="result-value">Rs. 0</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h4>Annual Time Spent</h4>
+                        <div id="time-result" class="result-value">0 hours</div>
+                    </div>
+                    
+                    <div class="alternatives">
+                        <h4>Recommended Alternatives</h4>
+                        <ul id="alternatives-list">
+                            <li>Use the Smart Public Transport System to save time and reduce emissions.</li>
+                            <li>Consider carpooling with colleagues for your route.</li>
+                            <li>For shorter distances, try cycling with the new bike-sharing service.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>See These Solutions in Action</h2>
+            <p>Join our community events to learn more about smart city initiatives being implemented.</p>
+            <a href="community-events.html" class="btn">Explore Events</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
             <div class="footer-bottom">
                 <p>&copy; 2025 UrbanRise Galle. All Rights Reserved.</p>
             </div>
@@ -91,5 +166,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/solutions.js"></script>
 </body>
 </html>

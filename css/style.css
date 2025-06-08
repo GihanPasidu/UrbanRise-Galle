@@ -2,13 +2,17 @@
 
 /* Base Styles */
 :root {
-    --primary-color: #1976D2;
+    --primary-color: #1565C0;
     --primary-dark: #0D47A1;
     --primary-light: #BBDEFB;
-    --secondary-color: #388E3C;
+    --secondary-color: #2E7D32;
     --secondary-dark: #1B5E20;
     --secondary-light: #C8E6C9;
-    --accent-color: #FF8F00;
+    --accent-color: #F57C00;
+    --heritage-color: #8D6E63;
+    --heritage-light: #D7CCC8;
+    --ocean-color: #0277BD;
+    --sand-color: #FFF8E1;
     --text-dark: #263238;
     --text-medium: #546E7A;
     --text-light: #90A4AE;
@@ -231,7 +235,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(25, 118, 210, 0.7)), url('../images/galle-fort.jpg');
+    background-image: linear-gradient(rgba(13, 71, 161, 0.6), rgba(2, 119, 189, 0.7)), url('../images/galle-fort-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -284,7 +288,7 @@ nav ul li a:hover {
 
 /* Page Banner */
 .page-banner {
-    background-image: linear-gradient(rgba(13, 71, 161, 0.8), rgba(25, 118, 210, 0.8)), url('../images/galle-city.jpg');
+    background-image: linear-gradient(rgba(13, 71, 161, 0.8), rgba(25, 118, 210, 0.8)), url('../images/galle-fort-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -296,15 +300,15 @@ nav ul li a:hover {
 }
 
 .solutions-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-smart-solutions.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-harbor.jpg');
 }
 
 .events-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-community.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/lighthouse-street.jpg');
 }
 
 .feedback-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-feedback.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/community-gathering-galle.jpg');
 }
 
 .banner-content h2 {
@@ -575,88 +579,17 @@ nav ul li a:hover {
 footer {
     background-color: var(--text-dark);
     color: white;
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-section h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background-color: var(--primary-color);
-}
-
-.footer-section p, .footer-section li {
-    margin-bottom: 10px;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.footer-section ul {
-    list-style-type: none;
-}
-
-.footer-section ul li a {
-    color: var(--text-light);
-}
-
-.footer-section ul li a:hover {
-    color: var(--primary-color);
-    padding-left: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: var(--transition);
-}
-
-.social-icons a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-5px);
-}
-
-.social-icons i {
-    font-size: 1.2rem;
-    color: white;
+    padding: 30px 0;
 }
 
 .footer-bottom {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.9rem;
     color: var(--text-light);
+    margin: 0;
 }
 
 /* Local Issues Page */
@@ -1875,4 +1808,21 @@ footer {
 .hover-lift:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-large);
+}
+
+/* Add heritage-specific styling */
+.heritage-highlight {
+    background: linear-gradient(135deg, var(--heritage-light), var(--sand-color));
+    border-left: 4px solid var(--heritage-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+.coastal-accent {
+    background: linear-gradient(135deg, var(--primary-light), rgba(2, 119, 189, 0.1));
+    border-left: 4px solid var(--ocean-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
 }

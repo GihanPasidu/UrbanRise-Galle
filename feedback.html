@@ -27,58 +27,171 @@
         </div>
     </header>
 
-    <section class="page-banner">
+    <section class="page-banner feedback-banner">
         <div class="banner-content">
-            <h2>Galle Community Feedback</h2>
-            <p>Share your ideas for improving Galle city</p>
+            <h2>Community Feedback Forum</h2>
+            <p>Share your ideas and join the conversation about smart urban solutions</p>
         </div>
     </section>
 
     <div id="feedback-app">
+        <section class="feedback-intro">
+            <div class="container">
+                <h2 class="section-title">Your Voice Matters</h2>
+                <p class="section-description">Our community forum allows citizens to share ideas, discuss solutions, and collaborate on making our cities smarter. Your insights help us develop better solutions for urban challenges.</p>
+            </div>
+        </section>
+
         <section class="feedback-forum">
             <div class="container">
                 <div class="forum-container">
-                    <h3>Share Your Thoughts</h3>
+                    <div class="forum-header">
+                        <h3>Join the Discussion</h3>
+                        <div class="forum-controls">
+                            <div class="search-bar">
+                                <input type="text" v-model="searchQuery" placeholder="Search discussions...">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            
+                            <div class="topic-filter">
+                                <select v-model="currentTopic">
+                                    <option value="all">All Topics</option>
+                                    <option value="traffic">Traffic Management</option>
+                                    <option value="waste">Waste Management</option>
+                                    <option value="energy">Energy Solutions</option>
+                                    <option value="water">Water Management</option>
+                                    <option value="general">General Discussion</option>
+                                </select>
+                            </div>
+                            
+                            <div class="sort-options">
+                                <select v-model="sortOption">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="popular">Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="post-form">
+                    <div class="post-form" v-if="!replyingTo">
+                        <h4>Share Your Thoughts</h4>
                         <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" v-model="newPost.name" placeholder="Enter your name">
+                            <label for="user-name">Your Name</label>
+                            <input type="text" id="user-name" v-model="newPost.name" placeholder="Enter your name">
                         </div>
                         
                         <div class="form-group">
-                            <label>Topic</label>
-                            <select v-model="newPost.topic">
-                                <option value="traffic">Traffic</option>
-                                <option value="waste">Waste</option>
-                                <option value="energy">Energy</option>
-                                <option value="general">General</option>
+                            <label for="post-topic">Topic</label>
+                            <select id="post-topic" v-model="newPost.topic">
+                                <option value="traffic">Traffic Management</option>
+                                <option value="waste">Waste Management</option>
+                                <option value="energy">Energy Solutions</option>
+                                <option value="water">Water Management</option>
+                                <option value="general">General Discussion</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label>Title</label>
-                            <input type="text" v-model="newPost.title" placeholder="Enter a title">
+                            <label for="post-title">Title</label>
+                            <input type="text" id="post-title" v-model="newPost.title" placeholder="Enter a title for your post">
                         </div>
                         
                         <div class="form-group">
-                            <label>Message</label>
-                            <textarea v-model="newPost.content" placeholder="Share your ideas..."></textarea>
+                            <label for="post-content">Your Message</label>
+                            <textarea id="post-content" v-model="newPost.content" placeholder="Share your ideas, suggestions, or concerns..."></textarea>
                         </div>
                         
-                        <button class="btn" @click="submitPost">Submit</button>
+                        <div class="form-actions">
+                            <button class="btn" @click="submitPost" :disabled="!isValidPost">Submit</button>
+                        </div>
+                    </div>
+                    
+                    <div class="post-form" v-if="replyingTo">
+                        <h4>Reply to: {{ replyingTo.title }}</h4>
+                        <div class="form-group">
+                            <label for="reply-name">Your Name</label>
+                            <input type="text" id="reply-name" v-model="newReply.name" placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reply-content">Your Reply</label>
+                            <textarea id="reply-content" v-model="newReply.content" placeholder="Type your reply..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn" @click="submitReply" :disabled="!isValidReply">Submit Reply</button>
+                            <button class="btn-alt" @click="cancelReply">Cancel</button>
+                        </div>
                     </div>
                     
                     <div class="forum-posts">
-                        <div v-for="post in posts" :key="post.id" class="forum-post">
-                            <h4>{{ post.title }}</h4>
-                            <p><strong>{{ post.name }}</strong> - {{ post.topic }}</p>
-                            <p>{{ post.content }}</p>
-                            <button class="like-btn" @click="likePost(post)">
-                                <i class="fas fa-heart"></i> {{ post.likes }}
-                            </button>
+                        <div v-if="filteredPosts.length === 0" class="no-posts">
+                            <p>No discussions found. Be the first to start a conversation!</p>
+                        </div>
+                        
+                        <div v-for="post in filteredPosts" :key="post.id" class="forum-post">
+                            <div class="post-header">
+                                <div class="post-meta">
+                                    <span class="post-author"><i class="fas fa-user"></i> {{ post.name }}</span>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> {{ formatDate(post.date) }}</span>
+                                    <span class="post-topic" :class="post.topic"><i class="fas fa-tag"></i> {{ getTopicName(post.topic) }}</span>
+                                </div>
+                                <h4 class="post-title">{{ post.title }}</h4>
+                            </div>
+                            
+                            <div class="post-body">
+                                <p>{{ post.content }}</p>
+                            </div>
+                            
+                            <div class="post-actions">
+                                <button class="like-btn" @click="likePost(post)">
+                                    <i class="fas" :class="post.userLiked ? 'fa-heart' : 'fa-heart-o'"></i> 
+                                    <span>{{ post.likes }} {{ post.likes === 1 ? 'Like' : 'Likes' }}</span>
+                                </button>
+                                <button class="reply-btn" @click="replyTo(post)">
+                                    <i class="fas fa-reply"></i> Reply
+                                </button>
+                            </div>
+                            
+                            <div class="post-replies" v-if="post.replies && post.replies.length > 0">
+                                <div v-for="reply in post.replies" :key="reply.id" class="reply">
+                                    <div class="reply-header">
+                                        <span class="reply-author"><i class="fas fa-user"></i> {{ reply.name }}</span>
+                                        <span class="reply-date"><i class="fas fa-calendar"></i> {{ formatDate(reply.date) }}</span>
+                                    </div>
+                                    <div class="reply-body">
+                                        <p>{{ reply.content }}</p>
+                                    </div>
+                                    <div class="reply-actions">
+                                        <button class="like-btn" @click="likeReply(post, reply)">
+                                            <i class="fas" :class="reply.userLiked ? 'fa-heart' : 'fa-heart-o'"></i> 
+                                            <span>{{ reply.likes }} {{ reply.likes === 1 ? 'Like' : 'Likes' }}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guidelines">
+            <div class="container">
+                <div class="guidelines-content">
+                    <h2 class="section-title">Community Guidelines</h2>
+                    <p>To ensure our forum remains a productive and respectful space for everyone, please follow these guidelines:</p>
+                    
+                    <ul class="guidelines-list">
+                        <li><i class="fas fa-check"></i> Be respectful and considerate of others' opinions</li>
+                        <li><i class="fas fa-check"></i> Stay on topic and keep comments relevant to urban development</li>
+                        <li><i class="fas fa-check"></i> Share constructive feedback and solutions</li>
+                        <li><i class="fas fa-check"></i> Provide details when discussing specific local challenges</li>
+                        <li><i class="fas fa-check"></i> Support claims with evidence when possible</li>
+                        <li><i class="fas fa-times"></i> No personal attacks or offensive language</li>
+                        <li><i class="fas fa-times"></i> No spam or promotional content</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -88,7 +201,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>UrbanRise Galle</h3>
+                    <h3>SmartSL Urban</h3>
                     <p>Creating better cities for Sri Lanka.</p>
                 </div>
                 <div class="footer-section">
