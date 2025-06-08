@@ -9,49 +9,39 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Exit if elements don't exist
     }
 
-    // Map data for different cities
+    // Map data for different cities - Enhanced focus on Galle
     const heatmapData = {
-        colombo: [
+        galle: [
             // Format: [x%, y%, intensity(1-10)]
-            [10, 20, 8],  // Pettah
+            [25, 40, 8], // Galle Fort main gate
+            [30, 35, 9], // Church Street/Main Street junction
+            [35, 30, 7], // Lighthouse Street
+            [20, 45, 6], // Fort Railway Station area
+            [40, 25, 5], // Rampart Street
+            [45, 40, 8], // Hospital Junction
+            [50, 35, 6], // Unawatuna Road junction
+            [55, 45, 4], // Hirimbura Cross Road
+            [40, 55, 7], // Magalle junction
+            [35, 60, 5], // Bus Stand area
+            [60, 40, 3], // Baddegama Road
+            [25, 25, 4], // Flag Rock area
+            [30, 20, 2], // Dutch Hospital area
+            [45, 20, 3], // Closenberg area
+            [65, 50, 2], // Walahanduwa junction
+            [70, 45, 1], // Baddegama direction
+        ],
+        colombo: [
+            // Simplified data for comparison
             [15, 30, 9],  // Fort
-            [25, 25, 7],  // Union Place
-            [35, 15, 10], // Borella
-            [40, 35, 6],  // Bambalapitiya
-            [55, 30, 8],  // Wellawatte
-            [65, 25, 5],  // Dehiwala
-            [75, 35, 3],  // Mount Lavinia
-            [30, 55, 7],  // Maradana
-            [45, 50, 8],  // Thimbirigasyaya
-            [60, 45, 4],  // Nugegoda
-            [50, 65, 3],  // Battaramulla
-            [25, 75, 2],  // Pelawatte
-            [35, 85, 1],  // Malabe
-            [85, 15, 2],  // Ratmalana
-            [90, 25, 1],  // Moratuwa
+            [35, 25, 8],  // Pettah
+            [55, 35, 7],  // Bambalapitiya
+            [75, 40, 5],  // Mount Lavinia
         ],
         kandy: [
-            [20, 30, 7], // Kandy City Center
-            [30, 35, 8], // Dalada Veediya
-            [40, 25, 6], // Peradeniya Road
-            [35, 45, 7], // Railway Station
-            [50, 30, 5], // Katugastota
-            [60, 40, 4], // Ampitiya
-            [70, 35, 3], // Polgolla
-            [45, 55, 5], // Mahanuwara
-            [55, 65, 3], // Digana
-            [65, 60, 2], // Kundasale
-        ],
-        galle: [
-            [25, 40, 6], // Galle Fort
-            [35, 35, 7], // Main Street
-            [45, 30, 5], // Lighthouse Street
-            [30, 50, 6], // Bus Station
-            [50, 45, 4], // Unawatuna Road
-            [60, 35, 3], // Hirimbura Cross Road
-            [40, 60, 4], // Magalle
-            [55, 55, 2], // Walahanduwa
-            [70, 50, 1], // Baddegama Road
+            // Simplified data for comparison
+            [30, 35, 8], // City Center
+            [45, 30, 6], // Peradeniya Road
+            [60, 40, 4], // Katugastota
         ]
     };
     
@@ -70,8 +60,44 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add city outline background (simplified map)
         const cityOutline = document.createElementNS(svgNS, "path");
         
-        // Different city outlines
-        if (city === 'colombo') {
+        // Different city outlines - Enhanced Galle map
+        if (city === 'galle') {
+            // Galle Fort and surrounding area
+            cityOutline.setAttribute("d", "M20,20 L60,20 L70,30 L70,60 L60,70 L20,70 L10,60 L10,30 Z");
+            cityOutline.setAttribute("fill", "#f8f4e6");
+            cityOutline.setAttribute("stroke", "#8D6E63");
+            cityOutline.setAttribute("stroke-width", "2");
+            
+            // Add Fort walls
+            const fortWalls = document.createElementNS(svgNS, "path");
+            fortWalls.setAttribute("d", "M20,30 L50,30 L55,35 L55,55 L50,60 L20,60 L15,55 L15,35 Z");
+            fortWalls.setAttribute("fill", "none");
+            fortWalls.setAttribute("stroke", "#6D4C41");
+            fortWalls.setAttribute("stroke-width", "3");
+            svg.appendChild(fortWalls);
+            
+            // Add ocean/harbor
+            const harbor = document.createElementNS(svgNS, "path");
+            harbor.setAttribute("d", "M0,20 L20,20 L10,30 L15,55 L20,70 L0,70 Z");
+            harbor.setAttribute("fill", "#0277BD");
+            svg.appendChild(harbor);
+            
+            // Add lighthouse
+            const lighthouse = document.createElementNS(svgNS, "circle");
+            lighthouse.setAttribute("cx", "45");
+            lighthouse.setAttribute("cy", "25");
+            lighthouse.setAttribute("r", "2");
+            lighthouse.setAttribute("fill", "#FFF");
+            lighthouse.setAttribute("stroke", "#F57C00");
+            lighthouse.setAttribute("stroke-width", "1");
+            svg.appendChild(lighthouse);
+            
+            // Add main roads
+            addRoad(svg, svgNS, "M20,40 L70,40", "#666", 3); // Main Street
+            addRoad(svg, svgNS, "M35,20 L35,70", "#666", 3); // Hospital Road
+            addRoad(svg, svgNS, "M15,55 L70,55", "#999", 2); // Unawatuna Road
+            addRoad(svg, svgNS, "M50,30 L70,30", "#999", 2); // Matara Road
+        } else if (city === 'colombo') {
             cityOutline.setAttribute("d", "M10,10 L90,10 L90,90 L10,90 Z");
             cityOutline.setAttribute("fill", "#f0f0f0");
             cityOutline.setAttribute("stroke", "#ccc");
@@ -108,23 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
             addRoad(svg, svgNS, "M20,50 C30,40 70,40 80,50", "#ddd", 3);
             addRoad(svg, svgNS, "M50,20 C60,30 60,70 50,80", "#ddd", 3);
             addRoad(svg, svgNS, "M30,30 C40,40 60,60 70,70", "#ddd", 3);
-        } else {
-            // Galle
-            cityOutline.setAttribute("d", "M30,30 L70,30 L80,50 L70,70 L30,70 L20,50 Z");
-            cityOutline.setAttribute("fill", "#f0f0f0");
-            cityOutline.setAttribute("stroke", "#ccc");
-            cityOutline.setAttribute("stroke-width", "1");
-            
-            // Add water body (sea)
-            const sea = document.createElementNS(svgNS, "path");
-            sea.setAttribute("d", "M0,30 L30,30 L20,50 L30,70 L0,70 Z");
-            sea.setAttribute("fill", "#e6f7ff");
-            svg.appendChild(sea);
-            
-            // Add main roads
-            addRoad(svg, svgNS, "M30,50 L70,50", "#ddd", 3);
-            addRoad(svg, svgNS, "M50,30 L50,70", "#ddd", 3);
-            addRoad(svg, svgNS, "M30,30 L70,70", "#ddd", 3);
         }
         
         svg.appendChild(cityOutline);
@@ -172,8 +181,15 @@ document.addEventListener('DOMContentLoaded', function() {
             svg.appendChild(heatPoint);
         });
         
-        // Add some landmarks
-        if (city === 'colombo') {
+        // Add landmarks - Enhanced for Galle
+        if (city === 'galle') {
+            addLandmark(svg, svgNS, 25, 40, "Fort Gate");
+            addLandmark(svg, svgNS, 30, 35, "Dutch Church");
+            addLandmark(svg, svgNS, 45, 25, "Lighthouse");
+            addLandmark(svg, svgNS, 40, 55, "Bus Stand");
+            addLandmark(svg, svgNS, 35, 30, "Clock Tower");
+            addLandmark(svg, svgNS, 20, 45, "Railway Station");
+        } else if (city === 'colombo') {
             addLandmark(svg, svgNS, 15, 30, "Fort");
             addLandmark(svg, svgNS, 40, 35, "Bambalapitiya");
             addLandmark(svg, svgNS, 60, 45, "Nugegoda");
@@ -274,8 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Initial render for default city (Colombo)
-    renderHeatmap('colombo');
+    // Initial render for default city (Galle instead of Colombo)
+    renderHeatmap('galle');
     
     // Add styles for heatmap elements
     const style = document.createElement('style');
@@ -300,16 +316,24 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Simulate live traffic updates
+    // Update traffic data to focus more on Galle
     setInterval(() => {
         const activeCity = document.querySelector('.city-btn.active').getAttribute('data-city');
-        // Slightly modify some data points to simulate changing traffic conditions
-        heatmapData[activeCity].forEach(point => {
-            // Random fluctuation between -1 and +1 for intensity
-            const fluctuation = Math.floor(Math.random() * 3) - 1;
-            point[2] = Math.max(1, Math.min(10, point[2] + fluctuation));
-        });
-        // Re-render the active city
+        // More frequent updates for Galle due to tourism traffic patterns
+        if (activeCity === 'galle') {
+            heatmapData[activeCity].forEach(point => {
+                // Tourism-influenced traffic patterns
+                const fluctuation = Math.floor(Math.random() * 3) - 1;
+                point[2] = Math.max(1, Math.min(10, point[2] + fluctuation));
+            });
+        } else {
+            // Slightly modify some data points to simulate changing traffic conditions
+            heatmapData[activeCity].forEach(point => {
+                // Random fluctuation between -1 and +1 for intensity
+                const fluctuation = Math.floor(Math.random() * 3) - 1;
+                point[2] = Math.max(1, Math.min(10, point[2] + fluctuation));
+            });
+        }
         renderHeatmap(activeCity);
-    }, 30000); // Update every 30 seconds
+    }, 20000); // More frequent updates for Galle (every 20 seconds)
 });

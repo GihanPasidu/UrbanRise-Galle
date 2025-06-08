@@ -152,63 +152,54 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('cost-result').textContent = `Rs. ${monthlyCost.toFixed(2)}`;
         document.getElementById('time-result').textContent = `${annualTime.toFixed(2)} hours`;
         
-        // Generate recommendations
+        // Generate Galle-specific recommendations
         generateRecommendations(transportType, distance, monthlyEmissions);
     }
     
     function generateRecommendations(currentMode, distance, emissions) {
-        const alternativesList = document.getElementById('alternatives-list');
-        if (!alternativesList) return;
-        
-        // Clear existing recommendations
-        alternativesList.innerHTML = '';
-        
-        // Generate recommendations based on current mode and distance
         const recommendations = [];
         
         if (currentMode === 'car') {
-            recommendations.push('Use the Smart Public Transport System to reduce your carbon footprint by up to 75%.');
-            recommendations.push('Consider carpooling with colleagues to share fuel costs and reduce emissions.');
-            
-            if (distance <= 10) {
-                recommendations.push('For your short distance commute, consider cycling using the new bike-sharing service.');
-            }
-            
-            recommendations.push('Work from home if possible, even 1-2 days per week can significantly reduce your emissions.');
+            recommendations.push('Consider using the coastal railway line from Galle to Colombo for longer commutes to reduce traffic in our historic city.');
+            recommendations.push('Try carpooling with other residents to preserve Galle Fort\'s narrow colonial streets from excessive vehicle wear.');
+            recommendations.push('For trips within Galle Fort, walking is often faster and helps protect our UNESCO World Heritage cobblestones.');
         } 
         else if (currentMode === 'motorcycle') {
-            recommendations.push('Consider an electric scooter to reduce emissions and fuel costs.');
-            
-            if (distance <= 8) {
-                recommendations.push('For your distance, cycling could be a healthy alternative on good weather days.');
-            }
-            
-            recommendations.push('The Smart Public Transport System covers most major routes with real-time tracking.');
+            recommendations.push('Be mindful of pedestrian areas in Galle Fort where motorized vehicles may disturb the heritage ambiance.');
+            recommendations.push('Consider the heritage-friendly electric scooter program being planned for Galle\'s tourism areas.');
         }
         else if (currentMode === 'bus' || currentMode === 'train') {
-            recommendations.push('You\'re already using a lower-emission transport option. Great job!');
-            recommendations.push('Check the Smart Public Transport app for optimal routes and less crowded times.');
-            
-            if (distance >= 15) {
-                recommendations.push('For long commutes, consider living closer to your workplace if possible.');
-            }
+            recommendations.push('Excellent choice! Galle\'s railway station connects beautifully to Colombo and other coastal cities.');
+            recommendations.push('Use the local bus network for trips within Galle district and to nearby beaches.');
+            recommendations.push('Support the heritage tram project being proposed for sustainable Fort area transport.');
         }
         else if (currentMode === 'bicycle' || currentMode === 'walking') {
-            recommendations.push('You\'re using zero-emission transport. Excellent choice for the environment!');
-            recommendations.push('Check our map for dedicated cycling lanes and pedestrian paths in your area.');
-            recommendations.push('On rainy days, the Smart Public Transport System is your best alternative.');
+            recommendations.push('Perfect for exploring Galle Fort and its historic rampart walls!');
+            recommendations.push('Check our map for dedicated cycling paths along the coastal road to Unawatuna.');
+            recommendations.push('Walking tours of Galle Fort are an eco-friendly way to experience our rich Dutch colonial heritage.');
+            recommendations.push('During monsoon season, the covered walkways in Dutch Hospital area provide shelter for pedestrians.');
         }
         
-        // Add general recommendation
+        // Add Galle-specific recommendations
         if (emissions > 50) {
-            recommendations.push('Your current commute has a significant carbon footprint. Consider our carbon offset program.');
+            recommendations.push('Your commute impacts Galle\'s UNESCO World Heritage air quality. Consider our carbon offset program supporting local mangrove restoration.');
+            recommendations.push('High emissions affect the preservation of historic buildings. Explore our electric vehicle incentive program for heritage area residents.');
         }
         
-        // Add recommendations to the list
-        recommendations.forEach(recommendation => {
-            const li = document.createElement('li');
-            li.textContent = recommendation;
-            alternativesList.appendChild(li);
-        });
+        // Add heritage preservation note
+        if (currentMode === 'car' && distance < 3) {
+            recommendations.push('Short trips within Galle can often be walked, helping preserve our Fort\'s 400-year-old Dutch stones and reducing wear on heritage streets.');
+        }
+        
+        // Display recommendations
+        const recommendationsList = document.getElementById('alternatives-list');
+        if (recommendationsList) {
+            recommendationsList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recommendationsList.appendChild(li);
+            });
+        }
     }
 });
