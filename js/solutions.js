@@ -163,39 +163,63 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear existing recommendations
         alternativesList.innerHTML = '';
         
-        // Generate recommendations based on current mode and distance
+        // Generate Galle-specific recommendations based on current mode and distance
         const recommendations = [];
         
         if (currentMode === 'car') {
-            recommendations.push('Consider using the Galle-Matara railway line for longer commutes to reduce traffic in the Fort area.');
-            recommendations.push('Try carpooling with other residents to preserve the historic character of narrow Fort streets.');
-            recommendations.push('For trips within Galle Fort, walking is often faster and helps protect the heritage site.');
+            recommendations.push('Use the Galle-Matara railway line for longer commutes - it runs along the beautiful coastline.');
+            recommendations.push('Consider carpooling with other residents to reduce traffic in the narrow historic Fort streets.');
+            recommendations.push('For trips within Galle Fort, walking is often faster and helps protect the UNESCO heritage site.');
+            
+            if (distance <= 5) {
+                recommendations.push('Short trips in Galle can be covered by the local three-wheeler network or cycling.');
+            }
+            
+            recommendations.push('Park outside the Fort and walk to preserve the historic cobblestone streets.');
         } 
         else if (currentMode === 'motorcycle') {
-            recommendations.push('Be mindful of pedestrian areas in Galle Fort where motorized vehicles may be restricted.');
+            recommendations.push('Be mindful of pedestrian areas in Galle Fort where motorized vehicles are restricted.');
             recommendations.push('Consider the heritage-friendly electric scooter sharing program launching in Galle.');
+            
+            if (distance <= 8) {
+                recommendations.push('For coastal routes to Unawatuna or Hikkaduwa, cycling offers beautiful ocean views.');
+            }
+            
+            recommendations.push('Use designated parking areas outside the Fort to preserve heritage architecture.');
         }
         else if (currentMode === 'bus' || currentMode === 'train') {
-            recommendations.push('Excellent choice! The Galle railway station connects well to Colombo and southern coastal areas.');
-            recommendations.push('Use the local bus network for short trips within Galle district.');
-            recommendations.push('Consider the heritage tram project planned for Galle Fort area.');
+            recommendations.push('Excellent choice! The Galle railway station connects directly to Colombo and coastal towns.');
+            recommendations.push('Use local buses for trips to nearby beaches like Unawatuna and Jungle Beach.');
+            recommendations.push('The coastal train route offers stunning ocean views while being eco-friendly.');
+            
+            if (distance >= 15) {
+                recommendations.push('For longer coastal trips, the train is your best option with stations in Hikkaduwa, Bentota, and beyond.');
+            }
         }
         else if (currentMode === 'bicycle' || currentMode === 'walking') {
-            recommendations.push('Perfect for exploring Galle Fort and its narrow historic streets!');
-            recommendations.push('Check our map for dedicated cycling paths along the coastal road.');
-            recommendations.push('Walking tours of Galle Fort are an eco-friendly way to experience our heritage.');
-            recommendations.push('On rainy days during monsoon, the covered walkways in Dutch Hospital area provide shelter.');
+            recommendations.push('Perfect for exploring Galle Fort\'s historic ramparts and narrow Dutch colonial streets!');
+            recommendations.push('Check our map for the dedicated cycling path along Galle Face and to Unawatuna.');
+            recommendations.push('Walking tours of Galle Fort help you discover hidden gems while being completely eco-friendly.');
+            recommendations.push('The Fort\'s compact size makes it ideal for walking - you can reach any point within 15 minutes.');
         }
         
-        // Add Galle-specific recommendations
+        // Add Galle-specific environmental recommendations
         if (emissions > 50) {
-            recommendations.push('Your commute impacts Galle\'s UNESCO World Heritage status. Consider our carbon offset program supporting local reforestation.');
-            recommendations.push('High emissions affect air quality around heritage sites. Explore our electric vehicle incentive program.');
+            recommendations.push('Your commute impacts Galle\'s UNESCO World Heritage air quality. Join our mangrove reforestation program.');
+            recommendations.push('High emissions affect the coastal environment. Consider our electric tuk-tuk incentive program.');
         }
         
-        // Add heritage preservation note
+        // Add heritage and tourism considerations
         if (currentMode === 'car' && distance < 3) {
-            recommendations.push('Short trips within Galle can often be walked, helping preserve the Fort\'s historic stones and reducing wear on ancient streets.');
+            recommendations.push('Short trips within Galle Fort are best done on foot to preserve the 400-year-old Dutch fortifications.');
+        }
+        
+        // Add tourism season considerations
+        recommendations.push('During peak tourist season (Dec-Mar), consider alternative routes via Akmeemana to avoid Fort congestion.');
+        
+        // Add coastal-specific recommendations
+        if (currentMode !== 'walking' && currentMode !== 'bicycle') {
+            recommendations.push('Experience Galle\'s coastal beauty by cycling or walking along the Fort ramparts facing the Indian Ocean.');
         }
         
         // Add recommendations to the list

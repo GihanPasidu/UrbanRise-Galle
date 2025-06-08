@@ -25,111 +25,111 @@ document.addEventListener('DOMContentLoaded', function() {
                 content: ''
             },
             
-            // Sample posts (would normally come from a server)
+            // Sample posts focused on Galle city
             posts: [
                 {
                     id: 1,
-                    name: 'Dasun Perera',
+                    name: 'Thilina Rathnayake',
                     date: new Date('2025-04-15T10:30:00'),
                     topic: 'traffic',
-                    title: 'One-way system needed for Galle Road',
-                    content: 'The traffic congestion along Galle Road, especially between Bambalapitiya and Wellawatte, has become unbearable during peak hours. I believe implementing a one-way system during peak hours (6-9 AM and 4-7 PM) could significantly improve traffic flow. What do others think about this suggestion?',
-                    likes: 12,
+                    title: 'Tourism traffic congestion in Galle Fort during weekends',
+                    content: 'The narrow streets of Galle Fort become extremely congested on weekends when tour buses and private vehicles try to enter. Church Street and Hospital Street are particularly affected. I suggest implementing a park-and-ride system at the Galle Cricket Stadium with shuttle services to the Fort entrance.',
+                    likes: 18,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Amali Fernando',
+                            name: 'Priyanka Fernando',
                             date: new Date('2025-04-15T11:45:00'),
-                            content: 'I agree this could help! But we would need good alternative routes for the opposite direction. Maybe Marine Drive could be optimized for the reverse flow?',
-                            likes: 8,
+                            content: 'Great idea! The Fort\'s UNESCO status requires us to protect these historic streets. A shuttle service would also give tourists a better experience without the stress of parking.',
+                            likes: 12,
                             userLiked: false
                         },
                         {
                             id: 2,
-                            name: 'Roshan Silva',
+                            name: 'Roshan Perera',
                             date: new Date('2025-04-15T14:20:00'),
-                            content: 'I\'m not sure this would work without substantial changes to connecting roads. The junctions at Bambalapitiya and Wellawatte would become bottlenecks. Perhaps we should consider a dedicated bus lane instead?',
-                            likes: 5,
+                            content: 'I work in the Dutch Hospital area and see this daily. Maybe we could also have time restrictions - no vehicles in the Fort core from 10 AM to 4 PM on weekends?',
+                            likes: 8,
                             userLiked: false
                         }
                     ]
                 },
                 {
                     id: 2,
-                    name: 'Priya Gunawardena',
+                    name: 'Amali Gunasekara',
                     date: new Date('2025-04-12T09:15:00'),
                     topic: 'waste',
-                    title: 'Need for separated waste bins in public areas',
-                    content: 'I\'ve noticed that most public waste bins in Colombo don\'t allow for separating recyclables from general waste. If we had bins with separate sections for plastic, paper, and general waste in high-traffic areas like parks and bus stops, it could greatly improve recycling rates. The municipality could then collect these pre-sorted materials more efficiently.',
-                    likes: 20,
+                    title: 'Beach waste management along Galle\'s coastline',
+                    content: 'The beautiful beaches around Galle, especially near the lighthouse and towards Unawatuna, are getting polluted with plastic waste from both locals and tourists. We need more frequent cleanup drives and better waste bins along the coastal walking path. The ocean currents also bring waste from other areas.',
+                    likes: 25,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Nimal Jayasuriya',
+                            name: 'Kasun Silva',
                             date: new Date('2025-04-12T10:30:00'),
-                            content: 'Great idea! I\'ve seen such bins in Singapore and they work very well. We should also have educational campaigns to teach people how to sort waste correctly.',
-                            likes: 7,
-                            userLiked: false
-                        }
-                    ]
-                },
-                {
-                    id: 3,
-                    name: 'Thilini Rajapakse',
-                    date: new Date('2025-04-10T16:45:00'),
-                    topic: 'energy',
-                    title: 'Solar panels for government buildings',
-                    content: 'With the frequent power outages and rising electricity costs, I think all government buildings should be equipped with solar panels. This would not only reduce their operational costs in the long run but also set an example for the private sector. Schools, hospitals, and administrative buildings have large roof areas that are perfect for solar installation.',
-                    likes: 15,
-                    userLiked: false,
-                    replies: []
-                },
-                {
-                    id: 4,
-                    name: 'Kumara Bandara',
-                    date: new Date('2025-04-08T15:20:00'),
-                    topic: 'water',
-                    title: 'Flood prevention through porous paving',
-                    content: 'The flooding in Colombo during monsoon season is getting worse each year. One solution I\'ve researched is porous paving for sidewalks, parking lots, and less-trafficked roads. These surfaces allow rainwater to seep through to the ground below, reducing runoff and helping replenish groundwater. Could this be implemented in flood-prone areas of the city?',
-                    likes: 18,
-                    userLiked: false,
-                    replies: [
-                        {
-                            id: 1,
-                            name: 'Sampath Perera',
-                            date: new Date('2025-04-08T16:10:00'),
-                            content: 'This is actually a great idea that\'s been implemented in several cities with heavy rainfall. The initial cost might be higher than traditional paving, but the reduced flood damage would make it worthwhile. Would need to ensure proper maintenance though, as these surfaces can get clogged with debris.',
-                            likes: 6,
-                            userLiked: false
-                        },
-                        {
-                            id: 2,
-                            name: 'Dilini Fonseka',
-                            date: new Date('2025-04-09T09:25:00'),
-                            content: 'I work for an engineering firm and we\'ve been studying this. The challenge in Sri Lanka is the intensity of monsoon rains - we would need to combine porous paving with improved drainage systems and retention ponds to make a significant difference.',
+                            content: 'I participate in monthly beach cleanups. We also need to educate tourists about not leaving waste on the beaches. Maybe signs in multiple languages?',
                             likes: 9,
                             userLiked: false
                         }
                     ]
                 },
                 {
-                    id: 5,
-                    name: 'Malith Gunathilaka',
-                    date: new Date('2025-04-05T11:05:00'),
-                    topic: 'general',
-                    title: 'Pedestrian-friendly city centers',
-                    content: 'I recently visited several European cities where the central areas were pedestrian-only zones. This created vibrant spaces for community interaction, outdoor dining, and cultural activities. Could we implement something similar in parts of Colombo, perhaps starting with sections of Pettah or Fort on weekends?',
-                    likes: 25,
+                    id: 3,
+                    name: 'Dilshan Jayawardena',
+                    date: new Date('2025-04-10T16:45:00'),
+                    topic: 'energy',
+                    title: 'Solar panels for Galle\'s historic buildings',
+                    content: 'With Galle\'s abundant sunshine and high tourism energy demands, we should install solar panels on non-heritage buildings. The new hotels and guesthouses outside the Fort could lead by example. We need to balance heritage preservation with modern energy needs.',
+                    likes: 16,
+                    userLiked: false,
+                    replies: []
+                },
+                {
+                    id: 4,
+                    name: 'Nelum Bandara',
+                    date: new Date('2025-04-08T15:20:00'),
+                    topic: 'water',
+                    title: 'Monsoon flooding in Galle\'s low-lying areas',
+                    content: 'Every monsoon season, areas like Hirimbura and parts of Magalle experience flooding. The old Dutch drainage systems in the Fort work well, but newer areas lack proper drainage. We need modern drainage systems that complement the historic infrastructure.',
+                    likes: 22,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Lakshmi Perera',
+                            name: 'Samanthi Perera',
+                            date: new Date('2025-04-08T16:10:00'),
+                            content: 'The drainage canals built by the Dutch are still functional after 400 years! We should study their design and adapt it for modern Galle. Maybe combine it with rainwater harvesting.',
+                            likes: 11,
+                            userLiked: false
+                        },
+                        {
+                            id: 2,
+                            name: 'Mahesh Fonseka',
+                            date: new Date('2025-04-09T09:25:00'),
+                            content: 'I work in urban planning. The challenge is that Galle is built on different elevation levels. We need a comprehensive water management plan that considers both heritage areas and new developments.',
+                            likes: 7,
+                            userLiked: false
+                        }
+                    ]
+                },
+                {
+                    id: 5,
+                    name: 'Sachini Wijeratne',
+                    date: new Date('2025-04-05T11:05:00'),
+                    topic: 'general',
+                    title: 'Preserving Galle\'s heritage while embracing modernity',
+                    content: 'As a Galle resident, I love our city\'s history but we also need modern amenities. How can we introduce smart city features like free WiFi, digital information boards, and modern lighting while respecting the UNESCO guidelines? Other heritage cities worldwide have managed this balance.',
+                    likes: 31,
+                    userLiked: false,
+                    replies: [
+                        {
+                            id: 1,
+                            name: 'Ravi Kumarasiri',
                             date: new Date('2025-04-05T12:30:00'),
-                            content: 'I love this idea! The arcade area would be perfect for a pedestrian zone. It would boost local businesses and create a more pleasant environment for shoppers.',
-                            likes: 8,
+                            content: 'I visited Dubrovnik in Croatia - they have a similar fort city with modern amenities integrated sensitively. Underground cables, heritage-style street lighting, and discreet WiFi points work well.',
+                            likes: 14,
                             userLiked: false
                         }
                     ]
@@ -187,14 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return new Date(date).toLocaleDateString('en-US', options);
             },
             
-            // Get readable topic name
+            // Get readable topic name - Updated for Galle context
             getTopicName(topicCode) {
                 const topics = {
-                    'traffic': 'Traffic Management',
-                    'waste': 'Waste Management',
-                    'energy': 'Energy Solutions',
-                    'water': 'Water Management',
-                    'general': 'General Discussion'
+                    'traffic': 'Traffic & Tourism Management',
+                    'waste': 'Waste & Beach Management',
+                    'energy': 'Energy & Heritage',
+                    'water': 'Water & Coastal Management',
+                    'general': 'General Galle Development'
                 };
                 
                 return topics[topicCode] || topicCode;

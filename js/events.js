@@ -36,114 +36,116 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModal = modal ? modal.querySelector('.close-modal') : null;
     
     if (detailButtons.length > 0 && modal && modalBody && closeModal) {
-        // Event data - normally this would come from a server
+        // Galle-specific event data
         const eventDetails = {
             'urban-gardening': {
-                title: 'Urban Gardening Workshop',
+                title: 'Heritage Garden Workshop',
                 date: 'May 28, 2025',
                 time: '9:00 AM - 12:00 PM',
-                location: 'Viharamahadevi Park, Colombo',
-                description: 'This hands-on workshop will teach participants how to create and maintain gardens in limited urban spaces. Learn techniques for vertical gardening, container gardening, and growing food in small spaces.',
+                location: 'Dutch Hospital Complex, Galle Fort',
+                description: 'Learn how to create traditional Sri Lankan gardens within Galle\'s historic architecture. This workshop focuses on heritage-appropriate gardening techniques using indigenous plants that complement the Fort\'s Dutch colonial aesthetic.',
                 agenda: [
-                    '9:00 AM - Welcome and introduction',
-                    '9:15 AM - Principles of urban gardening',
-                    '10:00 AM - Container gardening demonstration',
-                    '10:45 AM - Break with refreshments',
-                    '11:00 AM - Vertical gardening techniques',
-                    '11:45 AM - Q&A session'
+                    '9:00 AM - Welcome at Dutch Hospital courtyard',
+                    '9:15 AM - Heritage gardening principles for Fort buildings',
+                    '10:00 AM - Indigenous plant selection for coastal areas',
+                    '10:45 AM - Break with traditional Sri Lankan refreshments',
+                    '11:00 AM - Container gardening for Fort balconies',
+                    '11:45 AM - Q&A with local heritage gardening experts'
                 ],
-                organizer: 'Green Thumbs Sri Lanka',
-                contact: 'greenthumbssl@example.com',
+                organizer: 'Galle Heritage Foundation',
+                contact: 'gardens@galleheritage.lk',
                 image: 'images/urban-gardening-workshop.jpg'
             },
             'beach-cleanup': {
-                title: 'Wellawatte Beach Cleanup Drive',
+                title: 'Galle Fort Lighthouse Beach Cleanup',
                 date: 'June 5, 2025',
                 time: '7:00 AM - 10:00 AM',
-                location: 'Wellawatte Beach, Colombo',
-                description: 'Join us for a community beach cleanup to help protect our coastal environment. This event aims to remove trash from the beach area while raising awareness about marine pollution and waste management.',
+                location: 'Flag Rock Area, Galle Fort',
+                description: 'Protect Galle\'s pristine coastline with a community cleanup along the Fort\'s ocean-facing ramparts. Help preserve the stunning views that make Galle a UNESCO World Heritage site while learning about marine conservation.',
                 agenda: [
-                    '7:00 AM - Registration and equipment distribution',
-                    '7:15 AM - Safety briefing and team formation',
-                    '7:30 AM - Beach cleanup activity',
-                    '9:30 AM - Waste sorting and recycling demonstration',
-                    '10:00 AM - Conclusion and refreshments'
+                    '7:00 AM - Meet at Flag Rock parking area',
+                    '7:15 AM - Safety briefing and equipment distribution',
+                    '7:30 AM - Cleanup along ramparts and Flag Rock beach',
+                    '9:00 AM - Waste sorting demonstration',
+                    '9:30 AM - Marine conservation talk by local experts',
+                    '10:00 AM - Traditional breakfast at a Fort café'
                 ],
-                organizer: 'Clean Coasts Sri Lanka',
-                contact: 'cleancoasts@example.com',
+                organizer: 'Galle Ocean Conservation Society',
+                contact: 'cleanup@galleocean.lk',
                 image: 'images/beach-cleanup.jpg'
             },
             'tech-expo': {
-                title: 'Smart City Technologies Expo',
+                title: 'Heritage-Smart City Technologies Expo',
                 date: 'June 15, 2025',
                 time: '10:00 AM - 6:00 PM',
-                location: 'BMICH, Colombo',
-                description: 'Explore the latest innovations in smart city technology at this comprehensive expo. Experience interactive demonstrations, attend expert presentations, and discover how technology is reshaping urban living.',
+                location: 'Galle International Cricket Stadium',
+                description: 'Discover how cutting-edge technology can enhance historic cities without compromising heritage value. See demonstrations of heritage-sensitive smart lighting, tourism management systems, and coastal monitoring technologies specifically designed for Galle.',
                 agenda: [
-                    '10:00 AM - Exhibition opens',
-                    '11:00 AM - Keynote: Future of Smart Cities in South Asia',
-                    '1:00 PM - Panel discussion: Sustainable Urban Development',
-                    '3:00 PM - Demo: IoT Solutions for Traffic Management',
-                    '4:30 PM - Workshop: Smart Home Integration',
-                    '6:00 PM - Exhibition closes'
+                    '10:00 AM - Exhibition opens with Galle Fort drone showcase',
+                    '11:00 AM - Keynote: Smart Heritage Cities in the Digital Age',
+                    '1:00 PM - Panel: Balancing Tourism and Local Life in Galle',
+                    '3:00 PM - Demo: Heritage-Sensitive Street Lighting Systems',
+                    '4:30 PM - Workshop: Coastal Monitoring Technology',
+                    '6:00 PM - Exhibition closes with Fort sunset viewing'
                 ],
-                organizer: 'Tech Innovation Council',
-                contact: 'smartcityexpo@example.com',
+                organizer: 'Galle Smart City Initiative',
+                contact: 'expo@gallesmartcity.lk',
                 image: 'images/smart-city-expo.jpg'
             },
             'hackathon': {
-                title: 'Urban Innovation Hackathon',
+                title: 'Galle Heritage Innovation Hackathon',
                 date: 'June 22, 2025',
                 time: '9:00 AM - 9:00 PM',
-                location: 'University of Colombo',
-                description: 'A full-day coding challenge for developers, designers, and urban planners to create innovative solutions for Colombo\'s urban challenges. Form teams and compete for prizes while making a positive impact on your city.',
+                location: 'University of Ruhuna - Galle Campus',
+                description: 'Create innovative digital solutions for Galle\'s unique challenges as both a heritage site and growing tourist destination. Focus on tourism management, heritage preservation, and sustainable development solutions.',
                 agenda: [
-                    '9:00 AM - Registration and team formation',
-                    '9:30 AM - Challenge announcement and rules',
-                    '10:00 AM - Hackathon begins',
-                    '1:00 PM - Lunch break and progress check',
-                    '6:00 PM - Coding ends',
-                    '6:30 PM - Project presentations',
-                    '8:30 PM - Judging and awards ceremony'
+                    '9:00 AM - Registration with traditional Galle breakfast',
+                    '9:30 AM - Challenge announcement: Galle-specific problems',
+                    '10:00 AM - Hackathon begins - Fort tour for inspiration',
+                    '1:00 PM - Lunch featuring Galle\'s traditional cuisine',
+                    '6:00 PM - Coding deadline and project submissions',
+                    '6:30 PM - Presentations with Fort backdrop',
+                    '8:30 PM - Awards ceremony and networking with local businesses'
                 ],
-                organizer: 'Code for Sri Lanka',
-                contact: 'hackathon@example.com',
+                organizer: 'Galle Tech Community',
+                contact: 'hackathon@galletech.lk',
                 image: 'images/urban-hackathon.jpg'
             },
             'rainwater-workshop': {
-                title: 'Rainwater Harvesting Workshop',
+                title: 'Monsoon Water Harvesting for Heritage Buildings',
                 date: 'June 30, 2025',
                 time: '2:00 PM - 5:00 PM',
-                location: 'Diyatha Uyana, Battaramulla',
-                description: 'Learn practical techniques for collecting, storing, and using rainwater. This workshop will cover different harvesting systems suitable for homes and small businesses, helping to conserve water and reduce bills.',
+                location: 'Galle Municipal Council Grounds',
+                description: 'Learn heritage-appropriate rainwater collection methods suitable for Galle\'s colonial architecture. Discover how to harvest monsoon rains while preserving the integrity of historic buildings and dealing with coastal weather conditions.',
                 agenda: [
-                    '2:00 PM - Welcome and introduction',
-                    '2:15 PM - Benefits of rainwater harvesting',
-                    '2:45 PM - Simple harvesting systems demonstration',
-                    '3:30 PM - Break with refreshments',
-                    '3:45 PM - Advanced filtration and storage methods',
-                    '4:30 PM - Q&A session'
+                    '2:00 PM - Welcome with refreshing king coconut water',
+                    '2:15 PM - Understanding Galle\'s monsoon patterns',
+                    '2:45 PM - Heritage-friendly harvesting system demonstration',
+                    '3:30 PM - Break with traditional Galle sweets',
+                    '3:45 PM - Coastal adaptation and salt-resistant systems',
+                    '4:30 PM - Q&A with local water conservation experts'
                 ],
-                organizer: 'Water Conservation Network',
-                contact: 'waterconservation@example.com',
+                organizer: 'Galle Water Conservation Network',
+                contact: 'water@galleconservation.lk',
                 image: 'images/rain-water-workshop.jpg'
             },
             'canal-cleanup': {
-                title: 'Dehiwala Canal Restoration Project',
+                title: 'Galle Moat and Drainage System Restoration',
                 date: 'July 8, 2025',
                 time: '8:00 AM - 12:00 PM',
-                location: 'Dehiwala Canal, Colombo',
-                description: 'Help clean and restore the Dehiwala Canal, an important urban waterway for flood control. This community event will focus on removing debris, education about waterway health, and planting along the canal banks.',
+                location: 'Historic Moat Area, Galle Fort',
+                description: 'Help restore Galle\'s historic Dutch-built drainage system and moat areas. Learn about the ingenious 17th-century water management while contributing to flood prevention and heritage preservation.',
                 agenda: [
-                    '8:00 AM - Registration and equipment distribution',
-                    '8:15 AM - Safety briefing and team formation',
-                    '8:30 AM - Cleanup and debris removal',
-                    '10:30 AM - Break with refreshments',
-                    '11:00 AM - Bank stabilization and planting activity',
-                    '12:00 PM - Conclusion and next steps'
+                    '8:00 AM - Meet at the old Fort gate',
+                    '8:15 AM - Historical overview of Dutch water management',
+                    '8:30 AM - Cleanup of historic drainage channels',
+                    '10:00 AM - Traditional Sri Lankan breakfast break',
+                    '10:30 AM - Restoration of moat area vegetation',
+                    '11:30 AM - Future plans presentation by heritage experts',
+                    '12:00 PM - Wrap-up with views from the ramparts'
                 ],
-                organizer: 'Urban Waterways Initiative',
-                contact: 'canalrestoration@example.com',
+                organizer: 'Galle Heritage Restoration Society',
+                contact: 'moat@galleheritage.lk',
                 image: 'images/canal-cleanup.jpg'
             }
         };
