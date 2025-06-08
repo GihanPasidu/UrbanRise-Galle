@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Events - UrbanRise Galle</title>
+    <title>Community Events - SmartSL Urban</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1><span class="highlight">UrbanRise</span> Galle</h1>
+            <h1><span class="highlight">SmartSL</span> Urban</h1>
         </div>
         <nav>
             <ul>
@@ -26,226 +26,62 @@
         </div>
     </header>
 
-    <section class="page-banner events-banner">
+    <section class="page-banner">
         <div class="banner-content">
             <h2>Galle Community Events</h2>
-            <p>Join our heritage walks, clean-ups, and tech workshops to build a smarter Galle</p>
+            <p>Join our workshops and community activities in Galle</p>
         </div>
     </section>
 
     <section class="events-intro">
         <div class="container">
             <h2 class="section-title">Upcoming Events in Galle</h2>
-            <p class="section-description">Get involved in our community initiatives to help transform Galle's urban spaces while preserving our heritage. These events are designed to educate, engage, and empower residents to take an active role in our city's sustainable development.</p>
-            
-            <div class="event-filter">
-                <button class="filter-btn active" data-filter="all">All Events</button>
-                <button class="filter-btn" data-filter="workshop">Workshops</button>
-                <button class="filter-btn" data-filter="cleanup">Clean-up Drives</button>
-                <button class="filter-btn" data-filter="expo">Tech Expos</button>
-                <button class="filter-btn" data-filter="hackathon">Hackathons</button>
-            </div>
+            <p class="section-description">Get involved in our community initiatives to help transform Galle into a smarter city.</p>
         </div>
     </section>
 
     <section class="events-grid">
         <div class="container">
             <div class="events-container">
-                <div class="event-card" data-category="workshop">
-                    <div class="event-date">
-                        <span class="event-day">28</span>
-                        <span class="event-month">May</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/galle-fort-heritage-walk.jpg" alt="Galle Fort Heritage Walk">
-                        <div class="event-badge workshop">Workshop</div>
-                    </div>
+                <div class="event-card">
                     <div class="event-details">
-                        <h3>Galle Fort Heritage Walk & Tech Integration</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Galle Fort, Galle</span>
-                            <span><i class="fas fa-clock"></i> 9:00 AM - 12:00 PM</span>
-                        </div>
-                        <p>Explore how modern technology can enhance heritage tourism while preserving the authentic character of Galle Fort. Learn about digital heritage documentation and visitor management systems.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="heritage-walk">Register</button>
-                            <button class="btn-alt details-btn" data-event="heritage-walk">More Details</button>
-                        </div>
+                        <h3>Urban Gardening Workshop</h3>
+                        <p><i class="fas fa-calendar"></i> May 28, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Galle Municipal Garden</p>
+                        <p>Learn how to create vertical gardens in limited urban spaces within the historic city.</p>
+                        <button class="btn">Register</button>
                     </div>
                 </div>
 
-                <div class="event-card" data-category="cleanup">
-                    <div class="event-date">
-                        <span class="event-day">05</span>
-                        <span class="event-month">Jun</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/unawatuna-beach-cleanup.jpg" alt="Unawatuna Beach Cleanup">
-                        <div class="event-badge cleanup">Cleanup</div>
-                    </div>
+                <div class="event-card">
                     <div class="event-details">
-                        <h3>Unawatuna Beach Cleanup Drive</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Unawatuna Beach, Galle</span>
-                            <span><i class="fas fa-clock"></i> 7:00 AM - 10:00 AM</span>
-                        </div>
-                        <p>Join us in cleaning up one of Galle's most beautiful beaches and learn about coastal conservation and sustainable tourism practices. Equipment and refreshments provided.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="beach-cleanup">Register</button>
-                            <button class="btn-alt details-btn" data-event="beach-cleanup">More Details</button>
-                        </div>
+                        <h3>Galle Beach Cleanup Drive</h3>
+                        <p><i class="fas fa-calendar"></i> June 5, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Galle Beach & Unawatuna</p>
+                        <p>Join us in cleaning up Galle's beautiful beaches and protecting our coastal environment.</p>
+                        <button class="btn">Register</button>
                     </div>
                 </div>
 
-                <div class="event-card" data-category="expo">
-                    <div class="event-date">
-                        <span class="event-day">15</span>
-                        <span class="event-month">Jun</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/smart-city-expo.jpg" alt="Smart City Tech Expo">
-                        <div class="event-badge expo">Expo</div>
-                    </div>
+                <div class="event-card">
                     <div class="event-details">
-                        <h3>Smart City Technologies Expo</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> BMICH, Colombo</span>
-                            <span><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</span>
-                        </div>
-                        <p>Explore cutting-edge technologies transforming cities worldwide. Experience interactive demonstrations of IoT devices, smart traffic systems, and renewable energy solutions.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="tech-expo">Register</button>
-                            <button class="btn-alt details-btn" data-event="tech-expo">More Details</button>
-                        </div>
+                        <h3>Smart Heritage City Expo</h3>
+                        <p><i class="fas fa-calendar"></i> June 15, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Galle International Stadium</p>
+                        <p>Explore how technology can preserve heritage while creating smart city solutions.</p>
+                        <button class="btn">Register</button>
                     </div>
                 </div>
 
-                <div class="event-card" data-category="hackathon">
-                    <div class="event-date">
-                        <span class="event-day">22</span>
-                        <span class="event-month">Jun</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/urban-hackathon.jpg" alt="Urban Innovation Hackathon">
-                        <div class="event-badge hackathon">Hackathon</div>
-                    </div>
+                <div class="event-card">
                     <div class="event-details">
-                        <h3>Urban Innovation Hackathon</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> University of Colombo</span>
-                            <span><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</span>
-                        </div>
-                        <p>A full-day coding and design challenge to create innovative solutions for Colombo's urban problems. Open to students, professionals, and tech enthusiasts.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="hackathon">Register</button>
-                            <button class="btn-alt details-btn" data-event="hackathon">More Details</button>
-                        </div>
+                        <h3>Galle Innovation Hackathon</h3>
+                        <p><i class="fas fa-calendar"></i> June 22, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> University of Ruhuna, Galle Campus</p>
+                        <p>Code and design solutions for Galle's unique urban challenges.</p>
+                        <button class="btn">Register</button>
                     </div>
                 </div>
-
-                <div class="event-card" data-category="workshop">
-                    <div class="event-date">
-                        <span class="event-day">30</span>
-                        <span class="event-month">Jun</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/rain-water-workshop.jpg" alt="Rainwater Harvesting Workshop">
-                        <div class="event-badge workshop">Workshop</div>
-                    </div>
-                    <div class="event-details">
-                        <h3>Rainwater Harvesting Workshop</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Diyatha Uyana, Battaramulla</span>
-                            <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
-                        </div>
-                        <p>Learn how to design and build simple rainwater collection systems for homes and small businesses. Practical demonstrations and take-home guides included.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="rainwater-workshop">Register</button>
-                            <button class="btn-alt details-btn" data-event="rainwater-workshop">More Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-card" data-category="cleanup">
-                    <div class="event-date">
-                        <span class="event-day">08</span>
-                        <span class="event-month">Jul</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="images/canal-cleanup.jpg" alt="Dehiwala Canal Cleanup">
-                        <div class="event-badge cleanup">Cleanup</div>
-                    </div>
-                    <div class="event-details">
-                        <h3>Dehiwala Canal Restoration Project</h3>
-                        <div class="event-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Dehiwala Canal, Colombo</span>
-                            <span><i class="fas fa-clock"></i> 8:00 AM - 12:00 PM</span>
-                        </div>
-                        <p>Help clean the Dehiwala Canal and learn about the importance of urban waterways for flood prevention and ecosystem health. Gloves and tools provided.</p>
-                        <div class="event-actions">
-                            <button class="btn register-btn" data-event="canal-cleanup">Register</button>
-                            <button class="btn-alt details-btn" data-event="canal-cleanup">More Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="event-modal" id="event-details-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <section class="past-events">
-        <div class="container">
-            <h2 class="section-title">Past Events</h2>
-            <p>Our community has been actively involved in various initiatives. Here are some highlights from our past events:</p>
-            
-            <div class="past-events-slider">
-                <div class="slider-container">
-                    <div class="slide">
-                        <img src="images/past-event-1.jpg" alt="Solar Panel Workshop">
-                        <div class="slide-caption">
-                            <h4>Solar Panel Installation Workshop</h4>
-                            <p>April 2025 • 120 Participants</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/past-event-2.jpg" alt="Mount Lavinia Beach Cleanup">
-                        <div class="slide-caption">
-                            <h4>Mount Lavinia Beach Cleanup</h4>
-                            <p>March 2025 • 95 Participants</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/past-event-3.jpg" alt="Smart Traffic Hackathon">
-                        <div class="slide-caption">
-                            <h4>Smart Traffic Hackathon</h4>
-                            <p>February 2025 • 75 Participants</p>
-                        </div>
-                    </div>
-                    <!-- More past events slides could be added here -->
-                </div>
-                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <section class="host-event">
-        <div class="container">
-            <div class="host-content">
-                <h2>Want to Host an Event?</h2>
-                <p>If you have an idea for a community event related to smart city initiatives, we'd love to hear from you. We can provide resources, promotion, and volunteer support.</p>
-                <a href="#" class="btn">Propose an Event</a>
-            </div>
-            <div class="host-image">
-                <img src="images/community-event.jpg" alt="Community gathering">
             </div>
         </div>
     </section>
@@ -254,8 +90,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>UrbanRise Galle</h3>
-                    <p>Creating sustainable and innovative urban solutions for historic Galle city.</p>
+                    <h3>SmartSL Urban</h3>
+                    <p>Creating better cities for Sri Lanka.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -268,22 +104,17 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    <h3>Contact</h3>
+                    <p>Email: info@smartslurban.lk</p>
+                    <p>Phone: +94 11 123 4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UrbanRise Galle. All Rights Reserved.</p>
+                <p>&copy; 2025 SmartSL Urban. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/events.js"></script>
 </body>
 </html>

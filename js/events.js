@@ -38,59 +38,58 @@ document.addEventListener('DOMContentLoaded', function() {
     if (detailButtons.length > 0 && modal && modalBody && closeModal) {
         // Event data - normally this would come from a server
         const eventDetails = {
-            'heritage-walk': {
-                title: 'Galle Fort Heritage Walk & Tech Integration',
+            'urban-gardening': {
+                title: 'Urban Gardening Workshop',
                 date: 'May 28, 2025',
                 time: '9:00 AM - 12:00 PM',
-                location: 'Galle Fort, Galle',
-                description: 'Explore how modern technology can enhance heritage tourism while preserving the authentic character of Galle Fort. Learn about digital heritage documentation systems, visitor flow management, and smart lighting solutions that respect our UNESCO World Heritage status.',
+                location: 'Viharamahadevi Park, Colombo',
+                description: 'This hands-on workshop will teach participants how to create and maintain gardens in limited urban spaces. Learn techniques for vertical gardening, container gardening, and growing food in small spaces.',
                 agenda: [
-                    '9:00 AM - Welcome at Galle Fort Main Gate',
-                    '9:15 AM - Historical overview and heritage challenges',
-                    '10:00 AM - Digital documentation demonstration',
-                    '10:45 AM - Break with traditional Sri Lankan refreshments',
-                    '11:00 AM - Smart tourism management systems',
-                    '11:45 AM - Q&A session with heritage experts'
+                    '9:00 AM - Welcome and introduction',
+                    '9:15 AM - Principles of urban gardening',
+                    '10:00 AM - Container gardening demonstration',
+                    '10:45 AM - Break with refreshments',
+                    '11:00 AM - Vertical gardening techniques',
+                    '11:45 AM - Q&A session'
                 ],
-                organizer: 'Galle Heritage Foundation',
-                contact: 'heritage@gallefort.org',
-                image: 'images/galle-fort-heritage-walk.jpg'
+                organizer: 'Green Thumbs Sri Lanka',
+                contact: 'greenthumbssl@example.com',
+                image: 'images/urban-gardening-workshop.jpg'
             },
             'beach-cleanup': {
-                title: 'Unawatuna Beach Cleanup Drive',
+                title: 'Wellawatte Beach Cleanup Drive',
                 date: 'June 5, 2025',
                 time: '7:00 AM - 10:00 AM',
-                location: 'Unawatuna Beach, Galle',
-                description: 'Join us for a coastal conservation initiative at one of Galle\'s most beautiful beaches. This event combines environmental action with education about marine ecosystem protection and sustainable tourism practices.',
+                location: 'Wellawatte Beach, Colombo',
+                description: 'Join us for a community beach cleanup to help protect our coastal environment. This event aims to remove trash from the beach area while raising awareness about marine pollution and waste management.',
                 agenda: [
-                    '7:00 AM - Registration at Unawatuna Beach entrance',
+                    '7:00 AM - Registration and equipment distribution',
                     '7:15 AM - Safety briefing and team formation',
                     '7:30 AM - Beach cleanup activity',
-                    '9:00 AM - Marine conservation education session',
                     '9:30 AM - Waste sorting and recycling demonstration',
-                    '10:00 AM - Conclusion with king coconut refreshments'
+                    '10:00 AM - Conclusion and refreshments'
                 ],
-                organizer: 'Galle Environmental Network',
-                contact: 'cleanup@gallegreen.lk',
-                image: 'images/unawatuna-beach-cleanup.jpg'
+                organizer: 'Clean Coasts Sri Lanka',
+                contact: 'cleancoasts@example.com',
+                image: 'images/beach-cleanup.jpg'
             },
             'tech-expo': {
-                title: 'Galle Smart Heritage Tech Expo',
+                title: 'Smart City Technologies Expo',
                 date: 'June 15, 2025',
                 time: '10:00 AM - 6:00 PM',
-                location: 'Galle International Conference Hall',
-                description: 'Discover cutting-edge technologies specifically designed for heritage cities. Experience interactive demonstrations of IoT solutions for historic preservation, smart tourism management, and coastal monitoring systems.',
+                location: 'BMICH, Colombo',
+                description: 'Explore the latest innovations in smart city technology at this comprehensive expo. Experience interactive demonstrations, attend expert presentations, and discover how technology is reshaping urban living.',
                 agenda: [
                     '10:00 AM - Exhibition opens',
-                    '11:00 AM - Keynote: Technology in UNESCO Heritage Sites',
-                    '1:00 PM - Panel: Sustainable Tourism in Historic Cities',
-                    '3:00 PM - Demo: Heritage-Compatible Smart Lighting',
-                    '4:30 PM - Workshop: Coastal Monitoring Systems',
+                    '11:00 AM - Keynote: Future of Smart Cities in South Asia',
+                    '1:00 PM - Panel discussion: Sustainable Urban Development',
+                    '3:00 PM - Demo: IoT Solutions for Traffic Management',
+                    '4:30 PM - Workshop: Smart Home Integration',
                     '6:00 PM - Exhibition closes'
                 ],
-                organizer: 'Galle Tech Innovation Hub',
-                contact: 'expo@galletech.lk',
-                image: 'images/galle-tech-workshop.jpg'
+                organizer: 'Tech Innovation Council',
+                contact: 'smartcityexpo@example.com',
+                image: 'images/smart-city-expo.jpg'
             },
             'hackathon': {
                 title: 'Urban Innovation Hackathon',
