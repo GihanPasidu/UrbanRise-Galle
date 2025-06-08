@@ -29,107 +29,107 @@ document.addEventListener('DOMContentLoaded', function() {
             posts: [
                 {
                     id: 1,
-                    name: 'Dasun Perera',
+                    name: 'Kumara Dissanayake',
                     date: new Date('2025-04-15T10:30:00'),
                     topic: 'traffic',
-                    title: 'One-way system needed for Galle Road',
-                    content: 'The traffic congestion along Galle Road, especially between Bambalapitiya and Wellawatte, has become unbearable during peak hours. I believe implementing a one-way system during peak hours (6-9 AM and 4-7 PM) could significantly improve traffic flow. What do others think about this suggestion?',
-                    likes: 12,
+                    title: 'Heritage-sensitive traffic management in Galle Fort',
+                    content: 'The narrow colonial streets of Galle Fort were never designed for modern vehicle traffic. During peak tourist season, the congestion threatens both visitor experience and the historic stone pavements. I suggest implementing time-restricted vehicle access during certain hours, with electric shuttle services for tourists and residents.',
+                    likes: 15,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Amali Fernando',
+                            name: 'Sanduni Fernando',
                             date: new Date('2025-04-15T11:45:00'),
-                            content: 'I agree this could help! But we would need good alternative routes for the opposite direction. Maybe Marine Drive could be optimized for the reverse flow?',
+                            content: 'Excellent idea! We could also consider designated parking areas outside the Fort walls with pedestrian-friendly walkways. The cobblestone streets are already showing wear from heavy vehicles.',
                             likes: 8,
                             userLiked: false
                         },
                         {
                             id: 2,
-                            name: 'Roshan Silva',
+                            name: 'Roshan Perera',
                             date: new Date('2025-04-15T14:20:00'),
-                            content: 'I\'m not sure this would work without substantial changes to connecting roads. The junctions at Bambalapitiya and Wellawatte would become bottlenecks. Perhaps we should consider a dedicated bus lane instead?',
-                            likes: 5,
+                            content: 'As a local business owner, I support this but we need to ensure delivery access for shops. Perhaps early morning hours could be reserved for deliveries before tourist activities begin.',
+                            likes: 6,
                             userLiked: false
                         }
                     ]
                 },
                 {
                     id: 2,
-                    name: 'Priya Gunawardena',
+                    name: 'Nimalka Jayawardena',
                     date: new Date('2025-04-12T09:15:00'),
                     topic: 'waste',
-                    title: 'Need for separated waste bins in public areas',
-                    content: 'I\'ve noticed that most public waste bins in Colombo don\'t allow for separating recyclables from general waste. If we had bins with separate sections for plastic, paper, and general waste in high-traffic areas like parks and bus stops, it could greatly improve recycling rates. The municipality could then collect these pre-sorted materials more efficiently.',
-                    likes: 20,
+                    title: 'Smart waste management for heritage tourism areas',
+                    content: 'Galle Fort generates significant tourist waste, but traditional large bins disrupt the historic aesthetic. We need heritage-appropriate waste solutions - perhaps underground pneumatic systems or decorative bins that blend with colonial architecture while enabling efficient collection.',
+                    likes: 22,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Nimal Jayasuriya',
+                            name: 'Chaminda Silva',
                             date: new Date('2025-04-12T10:30:00'),
-                            content: 'Great idea! I\'ve seen such bins in Singapore and they work very well. We should also have educational campaigns to teach people how to sort waste correctly.',
-                            likes: 7,
-                            userLiked: false
-                        }
-                    ]
-                },
-                {
-                    id: 3,
-                    name: 'Thilini Rajapakse',
-                    date: new Date('2025-04-10T16:45:00'),
-                    topic: 'energy',
-                    title: 'Solar panels for government buildings',
-                    content: 'With the frequent power outages and rising electricity costs, I think all government buildings should be equipped with solar panels. This would not only reduce their operational costs in the long run but also set an example for the private sector. Schools, hospitals, and administrative buildings have large roof areas that are perfect for solar installation.',
-                    likes: 15,
-                    userLiked: false,
-                    replies: []
-                },
-                {
-                    id: 4,
-                    name: 'Kumara Bandara',
-                    date: new Date('2025-04-08T15:20:00'),
-                    topic: 'water',
-                    title: 'Flood prevention through porous paving',
-                    content: 'The flooding in Colombo during monsoon season is getting worse each year. One solution I\'ve researched is porous paving for sidewalks, parking lots, and less-trafficked roads. These surfaces allow rainwater to seep through to the ground below, reducing runoff and helping replenish groundwater. Could this be implemented in flood-prone areas of the city?',
-                    likes: 18,
-                    userLiked: false,
-                    replies: [
-                        {
-                            id: 1,
-                            name: 'Sampath Perera',
-                            date: new Date('2025-04-08T16:10:00'),
-                            content: 'This is actually a great idea that\'s been implemented in several cities with heavy rainfall. The initial cost might be higher than traditional paving, but the reduced flood damage would make it worthwhile. Would need to ensure proper maintenance though, as these surfaces can get clogged with debris.',
-                            likes: 6,
-                            userLiked: false
-                        },
-                        {
-                            id: 2,
-                            name: 'Dilini Fonseka',
-                            date: new Date('2025-04-09T09:25:00'),
-                            content: 'I work for an engineering firm and we\'ve been studying this. The challenge in Sri Lanka is the intensity of monsoon rains - we would need to combine porous paving with improved drainage systems and retention ponds to make a significant difference.',
+                            content: 'Great point! I\'ve seen heritage cities in Europe use bins designed to look like period-appropriate features. We could also increase recycling education for tourists at entry points.',
                             likes: 9,
                             userLiked: false
                         }
                     ]
                 },
                 {
-                    id: 5,
-                    name: 'Malith Gunathilaka',
-                    date: new Date('2025-04-05T11:05:00'),
-                    topic: 'general',
-                    title: 'Pedestrian-friendly city centers',
-                    content: 'I recently visited several European cities where the central areas were pedestrian-only zones. This created vibrant spaces for community interaction, outdoor dining, and cultural activities. Could we implement something similar in parts of Colombo, perhaps starting with sections of Pettah or Fort on weekends?',
-                    likes: 25,
+                    id: 3,
+                    name: 'Pradeep Gunaratne',
+                    date: new Date('2025-04-10T16:45:00'),
+                    topic: 'energy',
+                    title: 'Solar integration respecting heritage guidelines',
+                    content: 'While solar panels could significantly reduce energy costs for Galle Fort businesses, UNESCO heritage guidelines restrict visible modern installations. We need creative solutions - perhaps solar tiles that mimic traditional clay roof tiles, or community solar farms outside the heritage zone.',
+                    likes: 18,
+                    userLiked: false,
+                    replies: []
+                },
+                {
+                    id: 4,
+                    name: 'Dilini Wickramasinghe',
+                    date: new Date('2025-04-08T15:20:00'),
+                    topic: 'water',
+                    title: 'Coastal flood management and heritage preservation',
+                    content: 'Rising sea levels increasingly threaten Galle Fort\'s foundation walls during monsoons. We need smart drainage solutions that protect the ancient Dutch engineering while managing modern stormwater. Traditional channels could be enhanced with IoT monitoring without visual impact.',
+                    likes: 20,
                     userLiked: false,
                     replies: [
                         {
                             id: 1,
-                            name: 'Lakshmi Perera',
+                            name: 'Arjuna Ranasinghe',
+                            date: new Date('2025-04-08T16:10:00'),
+                            content: 'The original Dutch drainage system was remarkable for its time. Modern sensors could help us understand water flow patterns and enhance the existing infrastructure rather than replacing it.',
+                            likes: 7,
+                            userLiked: false
+                        },
+                        {
+                            id: 2,
+                            name: 'Malini Fonseka',
+                            date: new Date('2025-04-09T09:25:00'),
+                            content: 'As an engineer working on coastal projects, I can confirm that heritage-compatible solutions exist. We should also consider traditional Sri Lankan water management techniques from ancient cities.',
+                            likes: 11,
+                            userLiked: false
+                        }
+                    ]
+                },
+                {
+                    id: 5,
+                    name: 'Tharaka Bandara',
+                    date: new Date('2025-04-05T11:05:00'),
+                    topic: 'general',
+                    title: 'Balancing tourism growth with local community needs',
+                    content: 'Galle\'s tourism success brings economic benefits but also challenges for local residents. Housing costs are rising, traditional businesses are displaced by tourist shops, and infrastructure strain affects daily life. How can we ensure tourism development serves the community?',
+                    likes: 28,
+                    userLiked: false,
+                    replies: [
+                        {
+                            id: 1,
+                            name: 'Upul Rajapakse',
                             date: new Date('2025-04-05T12:30:00'),
-                            content: 'I love this idea! The arcade area would be perfect for a pedestrian zone. It would boost local businesses and create a more pleasant environment for shoppers.',
-                            likes: 8,
+                            content: 'We need policies that require tourism businesses to employ local residents and support traditional crafts. Revenue sharing from tourism taxes could fund community infrastructure improvements.',
+                            likes: 12,
                             userLiked: false
                         }
                     ]
