@@ -2,13 +2,17 @@
 
 /* Base Styles */
 :root {
-    --primary-color: #1976D2;
+    --primary-color: #1565C0;
     --primary-dark: #0D47A1;
     --primary-light: #BBDEFB;
-    --secondary-color: #388E3C;
+    --secondary-color: #2E7D32;
     --secondary-dark: #1B5E20;
     --secondary-light: #C8E6C9;
-    --accent-color: #FF8F00;
+    --accent-color: #F57C00;
+    --heritage-color: #8D6E63;
+    --heritage-light: #D7CCC8;
+    --ocean-color: #0277BD;
+    --sand-color: #FFF8E1;
     --text-dark: #263238;
     --text-medium: #546E7A;
     --text-light: #90A4AE;
@@ -231,7 +235,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(25, 118, 210, 0.7)), url('../images/galle-fort.jpg');
+    background-image: linear-gradient(rgba(13, 71, 161, 0.6), rgba(2, 119, 189, 0.7)), url('../images/galle-fort-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -284,7 +288,7 @@ nav ul li a:hover {
 
 /* Page Banner */
 .page-banner {
-    background-image: linear-gradient(rgba(13, 71, 161, 0.8), rgba(25, 118, 210, 0.8)), url('../images/galle-city.jpg');
+    background-image: linear-gradient(rgba(13, 71, 161, 0.8), rgba(25, 118, 210, 0.8)), url('../images/galle-fort-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -296,15 +300,15 @@ nav ul li a:hover {
 }
 
 .solutions-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-smart-solutions.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-harbor.jpg');
 }
 
 .events-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-community.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/lighthouse-street.jpg');
 }
 
 .feedback-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/galle-feedback.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/community-gathering-galle.jpg');
 }
 
 .banner-content h2 {
@@ -1875,4 +1879,21 @@ footer {
 .hover-lift:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-large);
+}
+
+/* Add heritage-specific styling */
+.heritage-highlight {
+    background: linear-gradient(135deg, var(--heritage-light), var(--sand-color));
+    border-left: 4px solid var(--heritage-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+.coastal-accent {
+    background: linear-gradient(135deg, var(--primary-light), rgba(2, 119, 189, 0.1));
+    border-left: 4px solid var(--ocean-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
 }
